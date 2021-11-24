@@ -15,19 +15,12 @@ ndf = pd.DataFrame(data)
 ndf.to_csv('Todays_Postive_Stocks.csv')
 #print(Sorted_ndf)
 
-#server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
-#server.login("udeshjuseja88@gmail.com","Satnam@19su")
-#server.sendmail("udeshjuseja88@gmail.com","udeshjuseja@gmail.com","Postive Stocks fot today -- Automated Email - Udesh ")
-#server.sendmail("udeshjuseja88@gmail.com","nitinjuseja@gmail.com","Postive Stocks fot today -- Automated Email - Udesh ")
-#server.sendmail("udeshjuseja88@gmail.com","animeshtiwari2323@gmail.com","Postive Stocks fot today -- Automated Email - Udesh ")
 msg = EmailMessage()
 msg['Subject'] = 'Automated_Mail_CSV_FILE_ATTACHED For Postive Stocks Today -- Udesh'
-msg['From'] = 'udeshjuseja88@gmail.com'
-msg['To'] = 'udeshjuseja@gmail.com'
+msg['From'] = 'xxxx@gmail.com'
+msg['To'] = 'xxxx@gmail.com'
 msg.set_content('Following Stocks Enclosed in attached CSV File have closedhigher than yesrterday.Thus, being positive')
-#msg['To'] = 'nitinjuseja@gmail.com'
-#msg['To'] = 'animeshtiwari2323@gmail.com'
-#msg['To'] = 'jainvikas013@gmail.com'
+
 
 with open('Todays_Postive_Stocks.csv', 'rb') as file1 :
     file_data = file1.read()
@@ -35,7 +28,7 @@ with open('Todays_Postive_Stocks.csv', 'rb') as file1 :
 msg.add_attachment(file_data, maintype = 'csv',subtype = 'csv',filename = file_name)
 
 server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
-server.login("udeshjuseja88@gmail.com","Satnam@19su")
+server.login("xxx@gmail.com","pass")
 server.send_message(msg)
 
 
